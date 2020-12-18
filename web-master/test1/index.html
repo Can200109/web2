@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>美丽哈尔滨</title>
+		<link rel="stylesheet" href="./css/common.css">
+	</head>
+	<style>
+		*{margin: 0;padding: 0;}
+		ul{list-style: none;}
+		img{display: block;}
+		a{text-decoration: none;color: black;}
+		.l{float: left;}
+		.r{float: right;}
+		.clear:after{content: "";display: block;clear: both;}
+		.container{width: 1000px;margin: 0 auto;}
+		body{height: 95%;width: 100%;}
+		
+		#header{height: 100px;overflow: hidden;border-bottom: 1px gray solid;position: fixed;width: 100%;margin-top: 0;z-index: 9999;background-color: white;}
+		#header div{width: 1200px;margin: 0 auto;}
+		#header img{margin-top: 20px;}
+		#header span{line-height: 100px;}
+		#header div{line-height: 100px;}
+		#header li{margin-left: 20px;}
+		#header li input{margin-top: 41px;background: #efefef;border-radius: 5px;border: none;height: 20px;}
+		#header li img{height: 20px;margin-top: 41px;background: #efefef;position: relative;left: -2px;border-radius: 5px;}
+
+		
+		.banner {
+			height: 300px;
+			border: 1px black solid;
+		}
+
+		.banner_text {
+			height: 440px;
+			border-top: 1px gray solid;
+			border-bottom: 1px gray solid;
+			background: #fafafa;
+		}
+
+		.banner_text h2 {
+			font-size: 22px;
+			line-height: 70px;
+			font-weight: normal;
+		}
+
+		.banner_text p {
+			font-size: 16px;
+			line-height: 30px;
+			margin-bottom: 20px;
+		}
+
+		.Dong {
+			width: 1000px;
+			height: 300px;
+			border: 1px solid black;
+			box-sizing: border-box;
+			margin: auto;
+			overflow-y: hidden;
+			overflow-x: hidden;
+			
+		}
+
+		.kuang {
+			width: 2500px;
+			height: 150px;
+			
+		}
+
+		.part1,
+		.part2 {
+			width: 1250px;
+			height: 150px;
+			float: left;
+		}
+
+		.part1>img,
+		.part2>img {
+			width: 416.6px;
+			height: 300px;
+			float: left;
+		}
+		#txt1,#txt2,#txt3,#txt4,#txt5{
+		        display:none;
+		    }
+		.wrapper h2 {
+			font-size: 22px;
+			font-weight: normal;
+			margin-top: 40px;
+			margin-bottom: 30px;
+		}
+
+		.wrapper li {
+			font-size: 14px;
+			width: 97px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+		}
+		.wrapper li:nth-of-type(1){
+			width: 98px;
+			height: 30px;
+			background:  #ff9d00;
+		}
+
+		.wrapper-img {
+			clear: both;
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.wrapper-img>div {
+			width: 192px;
+			height: 176px;
+			text-align: center;
+			border: 1px #eeeeee solid;
+			margin: 10px 7px 10px 0;
+		}
+		.wrapper-img div:nth-of-type(5n+5){
+			margin-right: 0;
+		}
+
+		.wrapper-img a {
+			font-size: 14px;
+		}
+		.wrapper-img a:hover{
+			color: #ff9d00;
+		}
+
+		.wrapper-img img {
+			margin-bottom: 10px;
+		}
+		.wrapper .page li{display: block;width: 20px;height: 24px;border-radius: 5px;margin-left: 3px;line-height: 24px;}
+		.wrapper .page li:nth-of-type(1){background: #ff9d00;}
+		.wrapper .page li:nth-of-type(7){display: block;width: 46px;height: 24px;background: #ff9d00;}
+		.wrapper .page li:nth-of-type(8){display: block;width: 34px;height: 24px;background: #ff9d00}
+		
+		.form{
+			background-color: white;
+			opacity: 0.8;
+			height: 300px;
+			width: 300px;
+			text-align: center;
+			padding-top:20px;
+			position: absolute;
+			top: calc( 50% - 150px );
+			left: calc( 50% - 150px );
+			display: none;
+			border-radius: 5px;
+		}
+		.register{
+			width: 380px;
+			height: 200px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			background-color: white;
+			opacity: 0.8;
+			border-radius: 10px;
+			display: none;
+		}
+		.box{
+			width:360px;
+			height:35px;
+			border:1px solid #ccc;
+			margin: 25px 10px;
+		}
+		.register span{
+			text-align: center;
+			width: 120px;
+			height: 35px;
+			letter-spacing: 5px;
+			color:black;
+			font-size:14px;
+			line-height:30px;
+			float: left;
+		}
+		.register input{
+			outline: none;
+			border: none;
+			width: 230px;
+			float: left;
+			height: 28px;
+			color:black;
+			font-size: 22px;
+			line-height: 35px;
+			
+		}
+		.box #yhm{
+			
+		}
+		.box #mm{
+			
+		}
+		.register p{
+			color: red;
+			font-size: 12px;
+			margin-left: 5px;
+		}
+		#yhm_txt,#mm_txt{
+			margin-left: 20px;
+		}
+		#ljzc{
+			width: 360px;
+			height: 35px;
+			background-color: red;
+			font-size: 14px;
+			line-height: 30px;
+			color: white;
+			margin: 10px;
+			border: none;
+		}
+		#ljzc:focus{
+			border: none;
+		}
+		.txt{
+			margin-left: 5px;
+		}
+		.success{
+			background-color: white;
+		}
+		#p1,#p2,#p3{
+			color: red;
+			font-size: 16px;
+			font-weight: 36px;
+		}
+		.span{
+			font-size:14px;
+			color:black;
+		}
+		.close{
+			position: absolute;
+			right: 10px;
+			top: 5px;
+		}
+		
+		#top{
+			position: fixed; right: 10px; bottom: 20px;
+			display: none;
+		}
+
+		
+		#footer{height: 49px;border-top: 1px #dbe7ed solid;background: #f1f9fc;text-align: center;font-size: 12px;color: #888888;line-height: 49px;padding-right: 20px;clear: both;}
+	</style>
+
+	<body>
+		<header id="header">
+			<div>
+				<img src="./images/logo.gif" style="height: 60px;" class="l">
+				<span>美丽哈尔滨</span>
+				<ul class="r">
+					<li class="l"><a href="#">首页</a></li>
+					<li class="l"><a href="#">必游景点</a></li>
+					<li class="l"><a href="#">热门线路</a></li>
+					<li class="l"><a href="#">历史文化</a></li>
+					<li class="l"><a href="#">服务流程</a></li>
+					<li class="l"><a href="#">优惠活动</a></li>
+					<li class="l"><a href="#">关于我们</a></li>
+					<li class="l"><a href="#">联系我们</a></li>
+					<li class="l">
+						<input type="text" class="l">
+						<a href="#"><img src="./images/sousuo.png" class="l"></a>
+					</li>
+					<li class="l"><button href="" id="login">登录</button></li>
+					<li class="l"><button href="" id="register">注册</button></li>
+				</ul>
+			</div>
+		</header>
+		<div style="height: 100px;">
+		</div>
+		<section>
+			<div class="banner container">
+				<div class="Dong">
+					<div class="kuang">
+						<div class="part1">
+							<img src="./images/1.jpeg" alt="" />
+							<img src="./images/2.jpeg" alt="" />
+							<img src="./images/3.jpeg" alt="" />
+							<img src="./images/1.jpeg" alt="" />
+							<img src="./images/2.jpeg" alt="" />
+						</div>
+						<div class="part2"></div>
+					</div>
+				</div>
+			</div>
+			<div class="banner_text ">
+				<div class="container">
+					<h2 id="txt1">哈尔滨景点概况</h2>
+					<p id="txt2">游览哈尔滨基本以欣赏独特的欧式建筑艺术为主。若冬季出游，冰雪项目必然不可错过。</p>
+					<p id="txt3">
+						1、老城区<br>
+						哈尔滨的老城区，也就是人们常说的道里、道外和南岗这三个片区。圣·索菲亚大教堂、中央大街、果戈里大街和老道外这些哈尔滨最广为人知的景点都聚集在此处。无论你怀揣着何种心愿来到哈尔滨，这个区域都会是你最主要的活动范围；而喜欢历史、钟爱建筑的朋友更是无法自拔，因为哈尔滨最珍贵的宝贝都在这了。
+					</p>
+					<p id="txt4">
+						2、松北<br>
+						哈尔滨比较新的城区，虽然历史底蕴比不上老城区，但冰雪大世界、太阳岛雪博会等冰雪相关项目都在这儿了。还有极地馆、虎林园、科技馆等寓教于乐的场所，可以说是亲子出游的绝佳之选。
+					</p>
+					<p id="txt5">
+						3、呼兰<br>
+						呼兰离市区比较远，且景点不多。比较吸引人的有“东方巴黎圣母院”之称的呼兰天主教堂和近代著名女作家萧红的故居。
+				</div>
+			</div>
+		</section>
+		<section class="wrapper">
+			<div class="container">
+				<h2>哈尔滨全部景点</h2>
+				<ul>
+					<li class="l"><a href="#">全部景点</a></li>
+					<li class="l"><a href="#">冬日泡温泉</a></li>
+					<li class="l"><a href="#">避暑胜地</a></li>
+					<li class="l"><a href="#">文艺场馆</a></li>
+					<li class="l"><a href="#">老建筑</a></li>
+					<li class="l"><a href="#">冰雪精华游</a></li>
+					<li class="l"><a href="#">冰城玩滑雪</a></li>
+				</ul>
+				<div class="wrapper-img container">
+					<div>
+						<a href="#">
+							<img src="./images/wrapper-1.jpeg">
+							圣索菲亚大教堂
+						</a>
+					</div>
+					<div>
+						<a href="#">
+							<img src="./images/wrapper-2.jpeg">
+							中央大街
+						</a>
+					</div>
+					<div>
+						<a href="#">
+							<img src="./images/wrapper-3.jpeg">
+							松花江
+						</a>
+					</div>
+					<div>
+						<a href="#">
+							<img src="./images/wrapper-4.jpeg">
+							太阳岛风景区
+						</a>
+					</div>
+					<div>
+						<a href="#">
+							<img src="./images/wrapper-5.jpeg">
+							雪谷
+						</a>
+					</div>
+					<div>
+						<a href="#">
+							<img src="./images/wrapper-6.jpeg">
+							老道外
+						</a>
+					</div>
+					<div>
+						<a href="#">
+							<img src="./images/wrapper-7.jpeg">
+							哈尔滨极地馆
+						</a>
+					</div>
+					<div>
+						<a href="#">
+							<img src="./images/wrapper-8.jpeg">
+							亚布力森林温泉
+						</a>
+					</div>
+					<div>
+						<a href="#">
+							<img src="./images/wrapper-9.jpeg">
+							亚布力新体委滑雪场
+						</a>
+					</div>
+					<div>
+						<a href="#">
+							<img src="./images/wrapper-10.jpeg">
+							果戈里大街
+						</a>
+					</div>
+					<div>
+						<a href="#">
+							<img src="./images/wrapper-11.jpeg">
+							哈尔滨冰雪大世界
+						</a>
+					</div>
+					<div>
+						<a href="#">
+							<img src="./images/wrapper-12.jpeg">
+							太阳岛风景区-俄罗斯风情
+						</a>
+					</div>
+					<div>
+						<a href="#">
+							<img src="./images/wrapper-13.jpeg">
+							哈尔滨市人民防洪胜利纪念
+						</a>
+					</div>
+					<div>
+						<a href="#">
+							<img src="./images/wrapper-14.jpeg">
+							东北虎林园
+						</a>
+					</div>
+					<div>
+						<a href="#">
+							<img src="./images/wrapper-15.jpeg">
+							亚布力世界第一滑道
+						</a>
+					</div>
+
+				</div>
+				<ul class="r page">
+					<li class="l"><a href="#">1</a></li>
+					<li class="l"><a href="#">2</a></li>
+					<li class="l"><a href="#">3</a></li>
+					<li class="l"><a href="#">4</a></li>
+					<li class="l"><a href="#">5</a></li>
+					<li class="l"><a href="#">6</a></li>
+					<li class="l"><a href="#">后一页</a></li>
+					<li class="l"><a href="#">末页</a></li>
+				</ul>
+				<span class="r">共20页/1177条</span>
+			</div>
+		</section>
+		<div class="form" id="login_box">
+			<form action="#" method="get">
+				<label>用户登录</label><br><br>
+				<input type="text" placeholder="请输入用户名" name="username"><br><br>
+				<input type="password" placeholder="请输入密码" name="password"><br><br>
+				<input type="checkbox">记住我<br><br>
+				<button style="width:172px;height:23px;">登录</button>
+			</form>
+			<p class="close">
+				<button type="button">×</button>
+			</p>
+		</div>
+		<button type="button" id="top" onclick="goTop()">
+			回到顶部
+		</button>
+		<footer id="footer">
+			Copyright © 2009 -2020 马家兴2019012379 All rights reserved. 技术支持：马家兴
+		</footer>
+		<div class="register" id="register_box">
+			<p class="close">
+				<button type="button">×</button>
+			</p>
+			<form action="" method="">
+				<div class="box">
+					<span class="span">用户名</span><input type="text" name="yhm" id="yhm" value="" />
+					<div style="clear: both;"></div>
+				</div>
+				<p class="txt" id="yhm_txt"></p>
+				<div class="box">
+					<span class="span">设置密码</span><input type="password" name="mm" id="mm" value="" />
+					<div style="clear: both;"></div>
+				</div>
+				<p class="txt" id="mm_txt"></p>
+				<button type="button" id="ljzc">立即注册<tton>
+			</form>
+			<div class="success">
+				<p id="p1"></p>
+				<p id="p2"></p>
+				<p id="p3"></p>
+			</div>
+		</div>
+	</body>
+	<script>
+		var dong = document.querySelector(".Dong");
+		var part1 = document.querySelector(".part1");
+		var part2 = document.querySelector(".part2");
+		part2.innerHTML = part1.innerHTML;
+
+		setInterval(function() {
+			dong.scrollLeft -= 2;
+			if (dong.scrollLeft <= 0) {
+				dong.scrollLeft = 1250;
+			}
+		}, 50);
+
+
+		//注册输入验证
+		document.getElementById("yhm").onfocus = function() {
+			document.getElementById("yhm_txt").innerHTML = "支持中文数字";
+		}
+		document.getElementById("yhm").onblur = function() {
+			if (document.getElementById("yhm").value == "") {
+				document.getElementById("yhm_txt").innerHTML = "用户名不能为空";
+			}
+		}
+		document.getElementById("mm").onfocus = function() {
+			if (document.getElementById("yhm")) {
+				document.getElementById("yhm_txt").innerHTML = "";
+			}
+			document.getElementById("mm_txt").innerHTML = "建议使用两种字符组合";
+		}
+		document.getElementById("mm").onblur = function() {
+			if (document.getElementById("mm").value == "") {
+				document.getElementById("mm_txt").innerHTML = "密码不能为空";
+			}
+			if (document.getElementById("mm").value != "") {
+				document.getElementById("mm_txt").innerHTML = "";
+			}
+		}
+		document.getElementById("ljzc").onclick = function() {
+			if (document.getElementById("yhm").value != "" && document.getElementById("mm").value != "") {
+				console.log(document.getElementById("yhm").value, document.getElementById("mm").value);
+			}
+			document.getElementById("p1").innerHTML = "注册成功!";
+			document.getElementById("p2").innerHTML = "用户名:" + document.getElementById("yhm").value;
+			document.getElementById("p3").innerHTML = "密码:" + document.getElementById("mm").value;
+		}
+
+
+		//登录注册点击函数
+		var login = document.getElementById("login");
+		var register = document.getElementById("register");
+		var close = document.getElementsByClassName("close");
+		login.onclick = function() {
+			document.getElementById("register_box").style.display = "none";
+			document.getElementById("login_box").style.display = "block";
+
+		};
+		register.onclick = function() {
+			document.getElementById("login_box").style.display = "none";
+			document.getElementById("register_box").style.display = "block";
+		}
+		for (var i in close) {
+			close[i].onclick = function() {
+				document.getElementById("login_box").style.display = "none";
+				document.getElementById("register_box").style.display = "none";
+			}
+		}
+
+		//回到顶部
+		function goTop() {
+			var odiv = document.getElementById("top");
+			//将滚动距离设置为0，兼容性写法
+			document.documentElement.scrollTop = document.body.scrollTop = 0;
+		}
+
+		window.onscroll = function() {
+			var odiv = document.getElementById("top");
+
+			//获取垂直滚动条的滚动距离，兼容性写法
+			var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+
+			if (scrollTop > 450) {
+				odiv.style.display = "block";
+			} else {
+				odiv.style.display = "none"
+			}
+		}
+
+		//文字显示
+		var i = 1;
+		var count = 5;
+
+		function showDiv(id) {
+			document.getElementById("txt" + id).style.display = 'block';
+			i++;
+			if (i > count) {
+				clearInterval(timMove);
+			}
+		}
+		var timMove = setInterval("showDiv(i)", 500);
+	</script>
+
+</html>
